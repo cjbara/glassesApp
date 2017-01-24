@@ -1,14 +1,36 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O4t-ZD-f9E">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="CGm-d9-dzB">
+            <objects>
+                <tabBarController id="O4t-ZD-f9E" customClass="TabBarController" customModule="glasses" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ABl-bh-7vc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="6BA-K3-mZR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EGd-ZB-tph" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1544" y="-71"/>
+        </scene>
+        <!--My Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="glasses" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +38,120 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smart Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uE6-rL-zfS">
+                                <rect key="frame" x="117" y="28" width="141.5" height="28"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BR6-mX-QMl" userLabel="Lights">
+                                <rect key="frame" x="16" y="64" width="165" height="165"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lights are currently on" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8d-nv-WbC">
+                                        <rect key="frame" x="66" y="8" width="91" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="Cr4-qY-hXn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lightsOn" translatesAutoresizingMaskIntoConstraints="NO" id="HyU-GC-dS4">
+                                        <rect key="frame" x="8" y="18" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="RVv-4j-Dsp"/>
+                                            <constraint firstAttribute="width" constant="50" id="arm-2P-7uD"/>
+                                        </constraints>
+                                    </imageView>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HqD-TH-wZS">
+                                        <rect key="frame" x="58" y="98" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="lightSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="pUm-VM-neb"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1764705882" green="0.2156862745" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="s8d-nv-WbC" secondAttribute="trailing" constant="8" id="IfR-dP-Sz3"/>
+                                    <constraint firstItem="HyU-GC-dS4" firstAttribute="leading" secondItem="BR6-mX-QMl" secondAttribute="leading" constant="8" id="TQD-gg-vTN"/>
+                                    <constraint firstItem="HqD-TH-wZS" firstAttribute="top" secondItem="s8d-nv-WbC" secondAttribute="bottom" constant="20" id="TlO-dZ-BDv"/>
+                                    <constraint firstItem="HyU-GC-dS4" firstAttribute="centerY" secondItem="s8d-nv-WbC" secondAttribute="centerY" id="cLa-yG-pqA"/>
+                                    <constraint firstAttribute="height" constant="165" id="dvT-u2-HdX"/>
+                                    <constraint firstItem="s8d-nv-WbC" firstAttribute="top" secondItem="BR6-mX-QMl" secondAttribute="top" constant="8" id="okW-7g-OWt"/>
+                                    <constraint firstItem="s8d-nv-WbC" firstAttribute="leading" secondItem="HyU-GC-dS4" secondAttribute="trailing" constant="8" id="skc-sj-t9T"/>
+                                    <constraint firstAttribute="width" constant="165" id="uiu-zP-h33"/>
+                                    <constraint firstItem="HqD-TH-wZS" firstAttribute="centerX" secondItem="BR6-mX-QMl" secondAttribute="centerX" id="uq4-kx-ZQg"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7oI-h9-QpA" userLabel="Lights">
+                                <rect key="frame" x="16" y="249" width="165" height="165"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Door is currently locked" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pT-74-PnP">
+                                        <rect key="frame" x="66" y="8" width="91" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="mlp-hG-cl3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locked" translatesAutoresizingMaskIntoConstraints="NO" id="7G0-8q-6Wd">
+                                        <rect key="frame" x="8" y="18" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="gru-4b-geo"/>
+                                            <constraint firstAttribute="width" constant="50" id="o0C-JP-dy2"/>
+                                        </constraints>
+                                    </imageView>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P9R-Rh-CJR">
+                                        <rect key="frame" x="58" y="98" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="doorSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="8F2-g4-5Yr"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1764705882" green="0.2156862745" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="P9R-Rh-CJR" firstAttribute="top" secondItem="0pT-74-PnP" secondAttribute="bottom" constant="20" id="7IW-zP-0A5"/>
+                                    <constraint firstItem="0pT-74-PnP" firstAttribute="top" secondItem="7oI-h9-QpA" secondAttribute="top" constant="8" id="HYX-8q-A4H"/>
+                                    <constraint firstItem="0pT-74-PnP" firstAttribute="leading" secondItem="7G0-8q-6Wd" secondAttribute="trailing" constant="8" id="QgK-iD-k3s"/>
+                                    <constraint firstAttribute="trailing" secondItem="0pT-74-PnP" secondAttribute="trailing" constant="8" id="Ye3-c6-Mjn"/>
+                                    <constraint firstItem="7G0-8q-6Wd" firstAttribute="leading" secondItem="7oI-h9-QpA" secondAttribute="leading" constant="8" id="ezu-qz-hKk"/>
+                                    <constraint firstItem="P9R-Rh-CJR" firstAttribute="centerX" secondItem="7oI-h9-QpA" secondAttribute="centerX" id="fhd-dE-t6H"/>
+                                    <constraint firstAttribute="width" constant="165" id="n02-Ew-AIs"/>
+                                    <constraint firstAttribute="height" constant="165" id="tza-LF-TjZ"/>
+                                    <constraint firstItem="7G0-8q-6Wd" firstAttribute="centerY" secondItem="0pT-74-PnP" secondAttribute="centerY" id="zVT-FD-Ch8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.15686274510000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="uE6-rL-zfS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6ur-Nm-PiU"/>
+                            <constraint firstItem="BR6-mX-QMl" firstAttribute="top" secondItem="uE6-rL-zfS" secondAttribute="bottom" constant="8" id="NbA-tX-rgp"/>
+                            <constraint firstItem="7oI-h9-QpA" firstAttribute="leading" secondItem="BR6-mX-QMl" secondAttribute="leading" id="STC-aq-s2F"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="BR6-mX-QMl" secondAttribute="leading" id="fSJ-1e-DeJ"/>
+                            <constraint firstItem="7oI-h9-QpA" firstAttribute="top" secondItem="BR6-mX-QMl" secondAttribute="bottom" constant="20" id="hil-tV-DPB"/>
+                            <constraint firstItem="uE6-rL-zfS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="yYE-ZZ-Evg"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="My Home" image="home" selectedImage="home" id="ywg-La-THe"/>
+                    <connections>
+                        <outlet property="doorImage" destination="7G0-8q-6Wd" id="q10-GI-ZwJ"/>
+                        <outlet property="doorLabel" destination="0pT-74-PnP" id="0c7-SM-fwS"/>
+                        <outlet property="doorSwitch" destination="P9R-Rh-CJR" id="2au-En-GDW"/>
+                        <outlet property="lightImage" destination="HyU-GC-dS4" id="95t-MU-2e3"/>
+                        <outlet property="lightSwitch" destination="HqD-TH-wZS" id="9IX-Ly-ad0"/>
+                        <outlet property="lightsLabel" destination="s8d-nv-WbC" id="oXo-9Z-hnh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-668" y="-392.65367316341832"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home" width="25" height="25"/>
+        <image name="lightsOn" width="256" height="256"/>
+        <image name="locked" width="256" height="256"/>
+    </resources>
 </document>
