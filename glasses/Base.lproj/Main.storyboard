@@ -46,7 +46,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BR6-mX-QMl" userLabel="Lights">
-                                <rect key="frame" x="16" y="64" width="165" height="165"/>
+                                <rect key="frame" x="16" y="76" width="165" height="165"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lights are currently on" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8d-nv-WbC">
                                         <rect key="frame" x="66" y="8" width="91" height="70"/>
@@ -85,7 +85,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7oI-h9-QpA" userLabel="Lights">
-                                <rect key="frame" x="16" y="249" width="165" height="165"/>
+                                <rect key="frame" x="16" y="261" width="165" height="165"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Door is currently locked" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pT-74-PnP">
                                         <rect key="frame" x="66" y="8" width="91" height="70"/>
@@ -127,7 +127,7 @@
                         <color key="backgroundColor" red="0.13725490200000001" green="0.15686274510000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="uE6-rL-zfS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6ur-Nm-PiU"/>
-                            <constraint firstItem="BR6-mX-QMl" firstAttribute="top" secondItem="uE6-rL-zfS" secondAttribute="bottom" constant="8" id="NbA-tX-rgp"/>
+                            <constraint firstItem="BR6-mX-QMl" firstAttribute="top" secondItem="uE6-rL-zfS" secondAttribute="bottom" constant="20" id="NbA-tX-rgp"/>
                             <constraint firstItem="7oI-h9-QpA" firstAttribute="leading" secondItem="BR6-mX-QMl" secondAttribute="leading" id="STC-aq-s2F"/>
                             <constraint firstAttribute="leadingMargin" secondItem="BR6-mX-QMl" secondAttribute="leading" id="fSJ-1e-DeJ"/>
                             <constraint firstItem="7oI-h9-QpA" firstAttribute="top" secondItem="BR6-mX-QMl" secondAttribute="bottom" constant="20" id="hil-tV-DPB"/>
