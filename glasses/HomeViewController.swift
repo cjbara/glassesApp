@@ -24,7 +24,10 @@ import UIKit
 import Firebase
 
 class HomeViewController: UIViewController {
-    var ref: FIRDatabaseReference!
+
+    let colors = Colors()
+    var db: Database = Database()
+    
     @IBOutlet var lightImage: UIImageView!
     @IBOutlet var lightSwitch: UISwitch!
     @IBOutlet var lightsLabel: UILabel!
@@ -33,47 +36,59 @@ class HomeViewController: UIViewController {
     @IBOutlet var doorSwitch: UISwitch!
     @IBOutlet var doorLabel: UILabel!
     
+    @IBOutlet var doorOpenImage: UIImageView!
+    @IBOutlet var doorOpenLabel: UILabel!
+    
+    @IBOutlet var windowOpenImage: UIImageView!
+    @IBOutlet var windowOpenLabel: UILabel!
+    
+    @IBOutlet var tempLabel: UILabel!
+    @IBOutlet var heatingCooling: UILabel!
+ 
+    @IBOutlet var motionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let tabBar = self.tabBarController as! TabBarController
+        db = tabBar.db
+        
+        self.navigationController?.navigationBar.barTintColor = colors.tabBarBackgroundColor;
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white];
+
+        //Ste up all listeners to Firebase db
         checkStatuses()
+        
     }
 
     @IBAction func lightSwitchChanged(_ sender: UISwitch) {
-        ref.child("lights").setValue(["on": lightSwitch.isOn])
+        db.changeLightStatus(isOn: self.lightSwitch.isOn)
     }
     
     @IBAction func doorSwitchChanged(_ sender: UISwitch) {
-        ref.child("door/locked").setValue(doorSwitch.isOn)
+        db.changeLockStatus(isLocked: self.doorSwitch.isOn)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func checkStatuses() {
-        ref = FIRDatabase.database().reference()
         
         //Check lights
-        ref.child("lights/on").observe(.value, with: { (snapshot) in
-            self.lightSwitch.isOn = (snapshot.value as! Bool == true)
-            self.lightImage.image = (self.lightSwitch.isOn ? #imageLiteral(resourceName: "lightsOn") : #imageLiteral(resourceName: "lightsOff"))
-            
-            self.lightsLabel.text = "Lights are currently \((self.lightSwitch.isOn ? "on" : "off"))"
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+        db.observeLights(lightSwitch: lightSwitch, lightImage: lightImage, lightsLabel: lightsLabel);
         
         //Check door
-        ref.child("door/locked").observe(.value, with: { (snapshot) in
-            self.doorSwitch.isOn = (snapshot.value as! Bool == true)
-            self.doorImage.image = (self.doorSwitch.isOn ? #imageLiteral(resourceName: "locked") : #imageLiteral(resourceName: "unlocked"))
-            
-            self.doorLabel.text = "Door is currently \((self.doorSwitch.isOn ? "locked" : "unlocked"))"
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+        db.observeDoor(doorSwitch: doorSwitch, doorImage: doorImage, doorLabel: doorLabel)
+        db.observeDoorOpen(doorOpenImage: doorOpenImage, doorOpenLabel: doorOpenLabel)
+
+        //Check window
+        db.observeWindowOpen(windowOpenImage: windowOpenImage, windowOpenLabel: windowOpenLabel)
+        
+        //Check motion
+        db.observeMotion(motionLabel: motionLabel)
+        
+        //Check temp
+        db.observeTemp(tempLabel: tempLabel, heatingCooling: heatingCooling)
+        
+        //Check smoke and CO
+        
     }
 
 }

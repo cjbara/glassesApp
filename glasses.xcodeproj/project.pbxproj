@@ -16,6 +16,14 @@
 		9166F1501E37F7F800CC97E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9166F14F1E37F7F800CC97E9 /* Assets.xcassets */; };
 		9166F1531E37F7F800CC97E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9166F1511E37F7F800CC97E9 /* LaunchScreen.storyboard */; };
 		9166F15B1E37F84E00CC97E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9166F15A1E37F84E00CC97E9 /* GoogleService-Info.plist */; };
+		9184201F1E40395700D5DCE1 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9184201E1E40395700D5DCE1 /* NotificationsViewController.swift */; };
+		918420211E403B0500D5DCE1 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918420201E403B0500D5DCE1 /* NotificationTableViewCell.swift */; };
+		918420251E403CB700D5DCE1 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918420241E403CB700D5DCE1 /* Notification.swift */; };
+		91A0176F1E4D017500F08E58 /* LightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A0176E1E4D017500F08E58 /* LightsViewController.swift */; };
+		91A017711E4D01DB00F08E58 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A017701E4D01DB00F08E58 /* Light.swift */; };
+		91A017731E4D067D00F08E58 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A017721E4D067D00F08E58 /* HistoryCell.swift */; };
+		91A017751E4D1EB200F08E58 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A017741E4D1EB200F08E58 /* Database.swift */; };
+		91A017771E4D21CE00F08E58 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A017761E4D21CE00F08E58 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +38,14 @@
 		9166F1521E37F7F800CC97E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9166F1541E37F7F800CC97E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9166F15A1E37F84E00CC97E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9184201E1E40395700D5DCE1 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		918420201E403B0500D5DCE1 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		918420241E403CB700D5DCE1 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		91A0176E1E4D017500F08E58 /* LightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsViewController.swift; sourceTree = "<group>"; };
+		91A017701E4D01DB00F08E58 /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		91A017721E4D067D00F08E58 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		91A017741E4D1EB200F08E58 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		91A017761E4D21CE00F08E58 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9355D5D09E4E5CD48D42CF7C /* Pods-glasses.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-glasses.debug.xcconfig"; path = "Pods/Target Support Files/Pods-glasses/Pods-glasses.debug.xcconfig"; sourceTree = "<group>"; };
 		F13A14564CFA3F7832760EC5 /* Pods-glasses.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-glasses.release.xcconfig"; path = "Pods/Target Support Files/Pods-glasses/Pods-glasses.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +83,9 @@
 			children = (
 				915159251E380370004EAEBF /* TabBarController.swift */,
 				9166F14A1E37F7F800CC97E9 /* HomeViewController.swift */,
+				91A0176E1E4D017500F08E58 /* LightsViewController.swift */,
+				91A017721E4D067D00F08E58 /* HistoryCell.swift */,
+				91A017761E4D21CE00F08E58 /* SettingsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -75,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				9166F1481E37F7F800CC97E9 /* AppDelegate.swift */,
-				915159271E3804AE004EAEBF /* Colors.swift */,
 				9166F15A1E37F84E00CC97E9 /* GoogleService-Info.plist */,
 				9166F1511E37F7F800CC97E9 /* LaunchScreen.storyboard */,
 				9166F1541E37F7F800CC97E9 /* Info.plist */,
@@ -104,12 +122,34 @@
 		9166F1471E37F7F800CC97E9 /* glasses */ = {
 			isa = PBXGroup;
 			children = (
+				91A017781E4D2C3300F08E58 /* Notifications (Not doing) */,
 				9151592B1E380E35004EAEBF /* ViewControllers */,
 				915159291E380E17004EAEBF /* Views */,
 				9166F14F1E37F7F800CC97E9 /* Assets.xcassets */,
+				9184201D1E40281500D5DCE1 /* Models */,
 				9151592C1E380E50004EAEBF /* Misc */,
 			);
 			path = glasses;
+			sourceTree = "<group>";
+		};
+		9184201D1E40281500D5DCE1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				915159271E3804AE004EAEBF /* Colors.swift */,
+				91A017701E4D01DB00F08E58 /* Light.swift */,
+				91A017741E4D1EB200F08E58 /* Database.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		91A017781E4D2C3300F08E58 /* Notifications (Not doing) */ = {
+			isa = PBXGroup;
+			children = (
+				918420241E403CB700D5DCE1 /* Notification.swift */,
+				918420201E403B0500D5DCE1 /* NotificationTableViewCell.swift */,
+				9184201E1E40395700D5DCE1 /* NotificationsViewController.swift */,
+			);
+			name = "Notifications (Not doing)";
 			sourceTree = "<group>";
 		};
 		9EB41998D3FD6F40C45C36AE /* Pods */ = {
@@ -246,10 +286,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				918420211E403B0500D5DCE1 /* NotificationTableViewCell.swift in Sources */,
+				91A017751E4D1EB200F08E58 /* Database.swift in Sources */,
 				915159261E380370004EAEBF /* TabBarController.swift in Sources */,
 				915159281E3804AE004EAEBF /* Colors.swift in Sources */,
+				918420251E403CB700D5DCE1 /* Notification.swift in Sources */,
 				9166F14B1E37F7F800CC97E9 /* HomeViewController.swift in Sources */,
+				9184201F1E40395700D5DCE1 /* NotificationsViewController.swift in Sources */,
+				91A017731E4D067D00F08E58 /* HistoryCell.swift in Sources */,
+				91A017711E4D01DB00F08E58 /* Light.swift in Sources */,
 				9166F1491E37F7F800CC97E9 /* AppDelegate.swift in Sources */,
+				91A0176F1E4D017500F08E58 /* LightsViewController.swift in Sources */,
+				91A017771E4D21CE00F08E58 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,8 +419,10 @@
 			baseConfigurationReference = 9355D5D09E4E5CD48D42CF7C /* Pods-glasses.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 499G2MTD9Y;
 				INFOPLIST_FILE = glasses/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = coryjbara.glasses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -385,8 +435,10 @@
 			baseConfigurationReference = F13A14564CFA3F7832760EC5 /* Pods-glasses.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 499G2MTD9Y;
 				INFOPLIST_FILE = glasses/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = coryjbara.glasses;
 				PRODUCT_NAME = "$(TARGET_NAME)";

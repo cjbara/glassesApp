@@ -21,8 +21,8 @@ extension UIColor {
 
 class Colors {
     let tabBarBackgroundColor = UIColor(red: 25, green: 30, blue: 40)
-    let tabBarItemColor = UIColor(red: 145, green: 155, blue: 165)
-    let selectedTabBarItemColor = UIColor(red: 150, green: 200, blue: 200)
+    let tabBarItemColor = UIColor(red: 100, green: 120, blue: 130)
+    let selectedTabBarItemColor = UIColor(red: 255, green: 255, blue: 255)
     
     let tileColor = UIColor(red: 45, green: 55, blue: 65)
     let tileBackgroundColor = UIColor(red: 35, green: 40, blue: 50)

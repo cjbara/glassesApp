@@ -10,12 +10,16 @@ import UIKit
 
 class TabBarController: UITabBarController {
     let colors = Colors()
+    let db = Database()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tabBar.barTintColor = colors.tabBarBackgroundColor
-        self.tabBar.tintColor = colors.tabBarItemColor
+        self.tabBar.tintColor = colors.selectedTabBarItemColor
+        self.tabBar.unselectedItemTintColor = colors.tabBarItemColor
+        
+        db.initialize()
         
     }
     

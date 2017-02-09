@@ -8,5 +8,6 @@ target 'glasses' do
   # Pods for glasses
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Toast-Swift', '~> 2.0.0'
 
 end
