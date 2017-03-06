@@ -9,18 +9,24 @@
 import UIKit
 import Toast_Swift
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var nameLabel: UITextField!
-    var db: Database = Database()
+    let db = Database.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let tabBar = self.tabBarController as! TabBarController
-        db = tabBar.db
 
+        self.nameLabel.delegate = self;
         nameLabel.text = db.user
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        db.user = nameLabel.text!
+        self.view.makeToast("User successfully updated!", duration: 3.0, position: .center)
+        return false
     }
     
     @IBAction func saveTouched(_ sender: Any) {

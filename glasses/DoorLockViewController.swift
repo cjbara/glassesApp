@@ -1,5 +1,5 @@
 //
-//  LightsViewController.swift
+//  DoorLockViewController.swift
 //  glasses
 //
 //  Created by Cory Jbara on 2/9/17.
@@ -9,31 +9,29 @@
 import UIKit
 import Firebase
 
-class LightsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DoorLockViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var history: [Light] = []
+    var history: [DoorLock] = []
     let db = Database.sharedInstance
 
-    @IBOutlet var lightImage: UIImageView!
-    @IBOutlet var lightSwitch: UISwitch!
-    @IBOutlet var lightsLabel: UILabel!
+    @IBOutlet var doorImage: UIImageView!
+    @IBOutlet var doorSwitch: UISwitch!
+    @IBOutlet var doorLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        db.initialize()
-        
         tableView.delegate = self
         tableView.dataSource = self
         
-        //Check lights
-        db.observeLights(lightSwitch: lightSwitch, lightImage: lightImage, lightsLabel: lightsLabel);
+        //Check door
+        db.observeDoor(doorSwitch: doorSwitch, doorImage: doorImage, doorLabel: doorLabel);
 
-        //Check light history
+        //Check door history
         history.removeAll()
-        db.checkLightHistory() {
+        db.checkDoorLockHistory() {
             (hist) in
             self.history = hist
             self.tableView.reloadData()
@@ -42,8 +40,8 @@ class LightsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-    @IBAction func lightSwitchChanged(_ sender: UISwitch) {
-        db.changeLightStatus(isOn: lightSwitch.isOn)
+    @IBAction func doorSwitchChanged(_ sender: UISwitch) {
+        db.changeLockStatus(isLocked: doorSwitch.isOn)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,7 +51,7 @@ class LightsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // your cell coding
         let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell", for: indexPath) as! HistoryCell
-        cell.body.text = "Turned \(self.history[indexPath.row].turnedOn ? "ON" : "OFF") by \(self.history[indexPath.row].changedBy)"
+        cell.body.text = "\(self.history[indexPath.row].locked ? "LOCKED" : "UNLOCKED") by \(self.history[indexPath.row].changedBy)"
         cell.time.text = history[indexPath.row].timestamp
         
         return cell

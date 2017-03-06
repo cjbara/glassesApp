@@ -26,7 +26,7 @@ import Firebase
 class HomeViewController: UIViewController {
 
     let colors = Colors()
-    var db: Database = Database()
+    let db = Database.sharedInstance
     
     @IBOutlet var lightImage: UIImageView!
     @IBOutlet var lightSwitch: UISwitch!
@@ -50,15 +50,14 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tabBar = self.tabBarController as! TabBarController
-        db = tabBar.db
+        db.initialize()
         
         self.navigationController?.navigationBar.barTintColor = colors.tabBarBackgroundColor;
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white];
 
         //Ste up all listeners to Firebase db
         checkStatuses()
-        
+                
     }
 
     @IBAction func lightSwitchChanged(_ sender: UISwitch) {

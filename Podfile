@@ -9,5 +9,6 @@ target 'glasses' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Toast-Swift', '~> 2.0.0'
+  pod 'Nuke', '~> 5.0'
 
 end

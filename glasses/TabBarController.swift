@@ -10,7 +10,7 @@ import UIKit
 
 class TabBarController: UITabBarController {
     let colors = Colors()
-    let db = Database()
+    let db = Database.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
